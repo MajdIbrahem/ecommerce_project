@@ -7,11 +7,14 @@ import Contact from './pages/contact/Contact';
 import Login from './pages/auth/Login';
 import Reset from './pages/auth/Reset';
 import Register from './pages/auth/Register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <Fragment>
       <BrowserRouter>
+        <ToastContainer></ToastContainer>
         <Header></Header>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
