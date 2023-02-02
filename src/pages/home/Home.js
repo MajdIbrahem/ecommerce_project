@@ -1,6 +1,12 @@
 import React from "react";
-import Styles from './Home.module.scss'
+import Categories from "../../components/categories/Categories";
+import Products from "../../components/products/Products";
+import Slider from "../../components/slider/Slider";
 const Home = () => {
-    return <div>Home</div>
+    return <div>
+        <Slider></Slider>
+        <Categories></Categories>
+        <Products></Products>
+    </div>
 };
 export default Home;

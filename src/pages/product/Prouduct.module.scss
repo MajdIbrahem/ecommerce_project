@@ -1,0 +1,46 @@
+.Wrapper{
+    padding: 50px;
+    display: flex;
+}
+.ImgContainer{
+    flex: 1;
+}
+.ImgContainer img{
+    width: 100%;
+    height: 70vh;
+    
+}
+.InfoContainer{
+    flex: 1;
+    padding: 0px 50px;
+}
+.InfoContainer h1{
+    font-weight: 400;
+    color: orangered;
+}
+.InfoContainer p{
+    margin: 20px 0px;
+}
+.InfoContainer span{
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.AddContainer{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.AddContainer button {
+    padding: 15px;
+    border: 2px solid orangered;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+        background-color: orangered;
+    }
+}

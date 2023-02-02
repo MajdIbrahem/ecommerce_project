@@ -9,6 +9,7 @@ import Reset from './pages/auth/Reset';
 import Register from './pages/auth/Register';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Product from './pages/product/Product';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/reset' element={<Reset/>}></Route>
           <Route path='/register' element={<Register/>}></Route>
+          <Route path='/product' element={<Product/>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

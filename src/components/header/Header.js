@@ -6,6 +6,8 @@ import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { signOut,onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/config";
 import { toast } from 'react-toastify';
+import { useDispatch,useSelector } from 'react-redux';
+import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../redux/slice/authSlice';
 const logo = (
     <div className={styles.logo}>
         <Link to='/'>
@@ -25,18 +27,33 @@ const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 const Header = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [displayName, setdisplayName] = useState("");
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+    const isLoggIn=useSelector(state=>state.auth.isLoggedIn )
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-        
-                const uid = user.uid;
-                setdisplayName(user.displayName)
+                // console.log(user)
+                // const uid = user.uid;
+                if (user.displayName == null) {
+                    const u1 = user.email.substring(0,user.email.indexOf("@"));
+                    const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
+                    setdisplayName(uName)
+                } else {
+                    setdisplayName(user.displayName)
+                }
+                
+                dispatch(SET_ACTIVE_USER({
+                    email:user.email,
+                    userName:displayName,
+                    userID:user.uid
+                }))
             } else {
-                setdisplayName("");
+                dispatch(REMOVE_ACTIVE_USER())
+
             }
 });
-    },[])
+    },[dispatch,displayName])
     const toggle = () => {
         setShowMenu(!showMenu)
     }
@@ -47,6 +64,7 @@ const Header = () => {
         signOut(auth).then(() => {
             toast.success("Logout sucsses ......")
             navigate("/")
+            dispatch(REMOVE_ACTIVE_USER())
         }).catch((error) => {
         toast.error(error.message)
         });
@@ -78,11 +96,10 @@ const Header = () => {
                     </ul>
                     <div className={styles["header-right"]} onClick={hideMenu}>
                         <span className={styles.links}>
-                            <NavLink to='/login' className={activeLink}>Login</NavLink>
-                            <a href="#home" style={{ color: "#ff7722" }}><FaUserCircle size={16} /> Hi, {displayName}</a>
-                            <NavLink to='/register'className={activeLink}>Register</NavLink>
-                            <NavLink to='/orederHistory'className={activeLink}>My Orders</NavLink>
-                            <NavLink to='/'onClick={LogoutUser}>Logout</NavLink>
+                            {!isLoggIn&&<NavLink to='/login' className={activeLink}>Login</NavLink>}
+                            {isLoggIn&&<a href="#home" style={{ color: "#ff7722" }}><FaUserCircle size={16} /> Hi, {displayName}</a>}
+                            {!isLoggIn&&<NavLink to='/register'className={activeLink}>Register</NavLink>}
+                            {isLoggIn&&<NavLink to='/'onClick={LogoutUser}>Logout</NavLink>}
                         </span>
                         {cart}
                     </div>

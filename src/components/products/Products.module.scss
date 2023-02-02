@@ -1,0 +1,24 @@
+.container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.FilterContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.Filter{
+    margin: 20px;
+}
+.Filter span{
+    font-size: 30px;
+    font-weight: 600;
+    margin-right: 20px;
+    color: orangered;
+}
+.select{
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px solid orangered;
+}
