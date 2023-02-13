@@ -14,11 +14,12 @@ const Product = () => {
             tristique tortor pretium ut. Curabitur elit justo, consequat id
                     condimentum ac, volutpat ornare.</p>
                 <span>price : 20$</span>
-            </div>
-            
-            <div className={styles.AddContainer}>
+                <div className={styles.AddContainer}>
                 <button>Add to Cart</button>
             </div>
+            </div>
+            
+            
             
         </div>
     </div>

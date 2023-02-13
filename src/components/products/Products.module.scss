@@ -22,3 +22,18 @@
     margin-right: 20px;
     border: 1px solid orangered;
 }
+@media only screen and (max-width: 380px){
+    .Filter {
+            margin: 20px;
+            width: 0px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .Filter span {
+            margin-right: 0px;
+        }
+        .select {
+            margin-right: 10px 0px;
+        }
+        
+}

@@ -44,3 +44,21 @@
         background-color: orangered;
     }
 }
+@media only screen and (max-width: 380px){
+    .Wrapper {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .ImgContainer img {
+            width: 100%;
+            height: 40vh;
+    
+        }
+    .AddContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+    }
+}

@@ -8,6 +8,7 @@ import { auth } from "../../firebase/config";
 import { toast } from 'react-toastify';
 import { useDispatch,useSelector } from 'react-redux';
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../redux/slice/authSlice';
+
 const logo = (
     <div className={styles.logo}>
         <Link to='/'>
@@ -15,20 +16,14 @@ const logo = (
         </Link>
     </div>
 );
-const cart = (<span className={styles.cart}>
-    <Link to='/cart'>
-        Cart
-        <FaShoppingCart size={20}></FaShoppingCart>
-        <p>0</p>
-    </Link>
-    
-</span>);
+
 const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 const Header = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [displayName, setdisplayName] = useState("");
     const navigate = useNavigate();
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const quantity=useSelector(state=>state.cart.totalQuantity )
     const isLoggIn=useSelector(state=>state.auth.isLoggedIn )
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -101,11 +96,25 @@ const Header = () => {
                             {!isLoggIn&&<NavLink to='/register'className={activeLink}>Register</NavLink>}
                             {isLoggIn&&<NavLink to='/'onClick={LogoutUser}>Logout</NavLink>}
                         </span>
-                        {cart}
+                        <span className={styles.cart}>
+                        <Link to='/cart'>
+                            Cart
+                            <FaShoppingCart size={20}></FaShoppingCart>
+                            <p>{quantity}</p>
+                        </Link>
+                        
+                    </span>
                     </div>
                 </nav>
                 <div className={styles["menu-icon"]}>
-                    {cart}
+                    <span className={styles.cart}>
+                        <Link to='/cart'>
+                            Cart
+                            <FaShoppingCart size={20}></FaShoppingCart>
+                            <p>{quantity}</p>
+                        </Link>
+                        
+                    </span>
                     <HiOutlineMenuAlt3 size={28} onClick={toggle}></HiOutlineMenuAlt3>
                 </div>
             </div>

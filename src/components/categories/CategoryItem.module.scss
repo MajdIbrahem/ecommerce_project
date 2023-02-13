@@ -28,3 +28,10 @@
     color: orangered;
     
 }
+@media only screen and (max-width: 380px){
+    .cotainer img {
+            width: 100%;
+            height: 20vh;
+            object-fit: cover;
+        }
+}
