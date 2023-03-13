@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.7d2f342f.css",
+    "main.js": "./static/js/main.05f2782c.js",
+    "static/media/Jumper-Sweater-PNG.png": "./static/media/Jumper-Sweater-PNG.892590f1a37899dd2e09.png",
+    "static/media/img44.jpg": "./static/media/img44.0abc766157c169ba58cb.jpg",
+    "static/media/Fashion Boutique 1.jpg": "./static/media/Fashion Boutique 1.abdcee01a6c19a108ae2.jpg",
+    "static/media/imdcc.jpg": "./static/media/imdcc.b2de9b8df7747655b7ac.jpg",
+    "static/media/p2.png": "./static/media/p2.8f4d435b1edd036c6af6.png",
+    "static/media/04de2e31234507.564a1d23645bf.gif": "./static/media/04de2e31234507.564a1d23645bf.1cbc65b12d68de6e3c23.gif",
+    "static/media/Jumper-PNG-Image.png": "./static/media/Jumper-PNG-Image.65211093c03d5eff58dc.png",
+    "static/media/slid-2.jpg": "./static/media/slid-2.46484d59589034e27264.jpg",
+    "static/media/contact.jpg": "./static/media/contact.a2adda94dd061b80e620.jpg",
+    "static/media/register.png": "./static/media/register.c63eced99fcb38972a6c.png",
+    "static/media/forgot.png": "./static/media/forgot.cfba148d722f088aeddb.png",
+    "static/media/login.png": "./static/media/login.78ccab5e2cbeadd1d2f2.png",
+    "index.html": "./index.html",
+    "main.7d2f342f.css.map": "./static/css/main.7d2f342f.css.map",
+    "main.05f2782c.js.map": "./static/js/main.05f2782c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d2f342f.css",
+    "static/js/main.05f2782c.js"
+  ]
+}
